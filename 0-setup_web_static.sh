@@ -23,7 +23,7 @@ fi
 chown -R ubuntu /data/
 chgrp -R ubuntu /data/
 
-ln -s /data/web_static/releases/test /data/web_static/current
+ln -s /data/web_static/releases/test/ /data/web_static/current
 
 printf %s "server {
      listen      80 default_server;
