@@ -32,7 +32,8 @@ printf %s "server {
      index       index.html index.htm;
 
      location /hbnb_static {
-        alias  /data/web_static/current/;
+        alias /data/web_static/current;
+        index index.html index.htm;
      }
 }
 " > /etc/nginx/sites-available/default
