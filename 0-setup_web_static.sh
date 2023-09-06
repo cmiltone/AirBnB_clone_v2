@@ -16,8 +16,8 @@ printf %s "<html>
 " > /data/web_static/releases/test/index.html
 
 mydir='/data/web_static/current'
-if [ ! -L $mydir ]; then
-  rm '/data/web_static/current'
+if [ -L $mydir ]; then
+  rm -R '/data/web_static/current'
 fi
 
 chown -R ubuntu /data/
