@@ -20,8 +20,8 @@ if [ ! -L $mydir ]; then
   rm '/data/web_static/current'
 fi
 
-chown -R /data/ ubuntu
-chgrp -R /data/ ubuntu
+chown -R ubuntu /data/
+chgrp -R ubuntu /data/
 
 ln -s /data/web_static/releases/test /data/web_static/current
 
