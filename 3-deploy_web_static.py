@@ -37,7 +37,7 @@ def do_deploy(archive_path):
     """
     distributes an archive to web servers
     """
-    if os.path.isdir(archive_path) is False:
+    if os.path.isfile(archive_path) is False:
         return False
 
     archive = archive_path.split("/")[-1]
@@ -58,7 +58,7 @@ def do_deploy(archive_path):
         return False
     if run("rm /tmp/{}".format(archive)).failed is True:
         return False
-    if run("mv {}{}/web_static/* ""{}{}/".
+    if run("mv {}{}/web_static/* {}{}/".
            format(releases, filename, releases, filename)).failed is True:
         return False
     if run("rm -rf {}{}/web_static".
