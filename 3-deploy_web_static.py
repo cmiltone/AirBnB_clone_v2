@@ -6,7 +6,7 @@ of the web_static folder
 """
 
 
-from fabric.api import local, run, env
+from fabric.api import local, run, env, put
 from datetime import datetime
 import os.path
 
