@@ -5,10 +5,12 @@ a .tgz archive from the contents
 of the web_static folder
 """
 
-from fabric.api import local, run
+from fabric.api import local, run, env
 from datetime import datetime
 import os.path
 
+
+env.hosts = ["35.175.64.13", "100.25.190.190"]
 
 def do_pack():
     """generates
