@@ -22,7 +22,7 @@ def do_pack():
     m = t.minute
     s = t.second
     stamp = "{}{}{}{}{}{}".format(y, m, d, h, m, s)
-    filepath = "versions/web_static_{}".format(stamp)
+    filepath = "versions/web_static_{}.tgz".format(stamp)
     if os.path.isdir("versions") is False:
         if local("mkdir -p versions").failed is True:
             return None
