@@ -5,6 +5,7 @@ a .tgz archive from the contents
 of the web_static folder
 """
 
+
 from fabric.api import local, run
 from datetime import datetime
 import os.path
@@ -30,6 +31,7 @@ def do_pack():
     if local("tar -cvzf {} web_static".format(filepath)).failed is True:
         return None
     return filepath
+
 
 def do_deploy(archive_path):
     """
@@ -64,10 +66,11 @@ def do_deploy(archive_path):
         return False
     if run("rm -rf {}".format(current)).failed is True:
         return False
-    if run("ln -s {}{}/ {}".format(releases, filename,
-            current)).failed is True:
+    if run("ln -s {}{}/ {}".
+           format(releases, filename, current)).failed is True:
         return False
     return True
+
 
 def deploy():
     """creates and distributes an archive to web servers"""

@@ -31,6 +31,7 @@ def do_pack():
         return None
     return filepath
 
+
 def do_deploy(archive_path):
     """
     distributes an archive to web servers
@@ -64,7 +65,7 @@ def do_deploy(archive_path):
         return False
     if run("rm -rf {}".format(current)).failed is True:
         return False
-    if run("ln -s {}{}/ {}".format(releases, filename,
-            current)).failed is True:
+    if run("ln -s {}{}/ {}".
+           format(releases, filename, current)).failed is True:
         return False
     return True
