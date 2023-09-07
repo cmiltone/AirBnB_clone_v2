@@ -9,8 +9,8 @@ from fabric.api import local, run, env, put
 from datetime import datetime
 import os.path
 
-
 env.hosts = ["35.175.64.13", "100.25.190.190"]
+
 
 def do_pack():
     """generates
@@ -32,6 +32,7 @@ def do_pack():
     if local("tar -cvzf {} web_static".format(filepath)).failed is True:
         return None
     return filepath
+
 
 def do_deploy(archive_path):
     """
