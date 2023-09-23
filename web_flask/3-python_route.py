@@ -20,6 +20,7 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
+    """c route"""
     _str = str(text).replace('_', ' ')
     return "C " + _str
 
@@ -27,6 +28,7 @@ def c_text(text):
 @app.route('/python', strict_slashes=False, defaults={'text': 'is cool'})
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text):
+    """python route"""
     _str = str(text).replace('_', ' ')
     return "Python " + _str
 

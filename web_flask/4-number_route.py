@@ -25,5 +25,19 @@ def c_text(text):
     return "C " + _str
 
 
+@app.route('/python', strict_slashes=False, defaults={'text': 'is cool'})
+@app.route('/python/<text>', strict_slashes=False)
+def python_text(text):
+    """python route"""
+    _str = str(text).replace('_', ' ')
+    return "Python " + _str
+
+
+@app.route('/number/<int:n>', strict_slashes=False)
+def number_n(n):
+    """number route"""
+    return "{} is a number".format(n)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
