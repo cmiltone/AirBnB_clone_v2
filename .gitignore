@@ -5,3 +5,6 @@ lib64
 pyvenv.cfg
 lib
 .venv
+
+
+main.py
