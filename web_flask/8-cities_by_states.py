@@ -12,7 +12,7 @@ app = Flask(__name__)
 def cities_by_states():
     """cities_by_states route"""
     all_states = storage.all(State)
-    return render_template('web_flask/templates/8-cities_by_states.html', states=all_states)
+    return render_template('8-cities_by_states.html', states=all_states)
 
 
 @app.teardown_appcontext
