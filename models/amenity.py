@@ -11,4 +11,4 @@ class Amenity(BaseModel, Base):
 
     # Many-To-Many relationship with Place
     place_amenities = relationship("Place", secondary="place_amenity",
-                                    viewonly=False)
+                                   viewonly=False)
